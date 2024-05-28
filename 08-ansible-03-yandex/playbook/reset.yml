@@ -1,0 +1,49 @@
+---
+- name: Reset All
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Stop and disable nginx
+      ansible.builtin.service:
+        name: nginx
+        state: stopped
+        enabled: no
+
+    - name: Remove NGINX
+      ansible.builtin.yum:
+        name: nginx
+        state: absent
+
+    - name: Remove NGINX configuration
+      ansible.builtin.file:
+        path: /etc/nginx/nginx.conf
+        state: absent
+
+    - name: Remove Lighthouse
+      ansible.builtin.command:
+        cmd: "rm -rf /opt/lighthouse"
+
+    - name: Remove Clickhouse
+      ansible.builtin.yum:
+        name:
+          - clickhouse-common-static
+          - clickhouse-client
+          - clickhouse-server
+        state: absent
+
+    - name: Remove Clickhouse configuration
+      ansible.builtin.file:
+        path: /etc/clickhouse-server/config.xml
+        state: absent
+
+    - name: Remove Vector
+      ansible.builtin.yum:
+        name: vector
+        state: absent
+
+    - name: Remove Vector configuration
+      ansible.builtin.file:
+        path: /etc/vector/vector.yml
+        state: absent
+

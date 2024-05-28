@@ -1,0 +1,9 @@
+server {
+    listen 80;
+    server_name 51.250.72.162;
+
+    location /lighthouse/ {
+        alias /opt/lighthouse/;
+        try_files $uri $uri/ /lighthouse/index.html;
+    }
+}

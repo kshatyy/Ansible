@@ -60,26 +60,3 @@ Playbook поддерживает следующие теги, позволяя 
 ```bash
 ansible-playbook -i inventory/prod.yml site.yml -t nginx
 ```
-
-## Скриншоты к ДЗ
-5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
-![Снимок](https://github.com/kshatyy/Ansible/assets/154414081/e1940b9c-4ce3-4fa7-b61c-c4025b647dbb)
-
-6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
-![Снимок1](https://github.com/kshatyy/Ansible/assets/154414081/1cddf657-366f-423c-a90d-c52f5f2e0da0)
-
-7. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
-![Снимок2](https://github.com/kshatyy/Ansible/assets/154414081/011efa08-fb6e-4e0d-9723-4ffafe4a5f74)
-![Снимок3](https://github.com/kshatyy/Ansible/assets/154414081/af753db4-895c-443e-ab6a-1d5bad324249)
-![Снимок4](https://github.com/kshatyy/Ansible/assets/154414081/6249ba61-6693-4733-9686-0ae625af1faf)
-
-8. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
-![Снимок](https://github.com/kshatyy/Ansible/assets/154414081/1d235031-e8b6-4ef3-92fa-e9a9b491cb0b)
-![Снимок1](https://github.com/kshatyy/Ansible/assets/154414081/d92dccd3-fe8b-4c15-ab38-a53f0363518e)
-![Снимок2](https://github.com/kshatyy/Ansible/assets/154414081/88b76c07-796f-40ce-a2e1-2cdb957ddb2f)
-
-10. Готовый playbook выложите в свой репозиторий, поставьте тег 08-ansible-03-yandex на фиксирующий коммит, в ответ предоставьте ссылку на него.
-
-```bash
-https://github.com/kshatyy/Ansible/releases/tag/08-ansible-03-yandex
-```

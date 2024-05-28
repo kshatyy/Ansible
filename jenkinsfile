@@ -1,0 +1,20 @@
+pipeline {
+    agent any
+    
+    stages {
+        stage('Git Checkout') {
+            steps {
+                git branch: 'main', url: 'https://github.com/kshatyy/Ansible.git'
+              
+            }
+        }
+        
+        stage('Run Molecule Tests') {
+            steps {
+                dir('08-ansible-03-yandex/playbook/roles/lighthouse-role') {
+                    sh 'molecule test'
+                }
+            }
+        }
+    }
+}
